@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 06:45:17 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/02/14 07:37:55 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/02/14 07:39:40 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
     ~ScalarConverter();
     ScalarConverter(const ScalarConverter&);
     ScalarConverter& operator=(const ScalarConverter&);
-    void convert(const std::string);
+    void static convert(const std::string);
 };
 
 #endif
