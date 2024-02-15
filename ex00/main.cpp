@@ -6,15 +6,19 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 06:44:23 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/02/14 15:43:27 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/02/15 14:22:57 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-int main(void)
+int main(int argc, char** argv)
 {
-	ScalarConverter value;
-	ScalarConverter::convert("42");
+
+    if (argc == 2)
+    {
+        std::string tmp = argv[1];
+        ScalarConverter::convert(argv[1]);
+    }
     return 0;    
 }

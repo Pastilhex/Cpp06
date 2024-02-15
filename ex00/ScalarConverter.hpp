@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 06:45:17 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/02/14 14:12:27 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/02/15 14:23:36 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define _SCALAR_
 
 #include <iostream>
+#include <cstdlib>
+#include <typeinfo>
+#include <string>
 
 class ScalarConverter {
 public:
