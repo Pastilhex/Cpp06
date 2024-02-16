@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 06:45:17 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/02/16 07:27:45 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/02/16 17:33:46 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <limits>
+#include <cmath>
 
 class ScalarConverter {
 public:
