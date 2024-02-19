@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 06:45:34 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/02/16 19:54:49 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/02/19 11:49:16 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,13 @@ void ScalarConverter::convert(const std::string value)
 	{
 		for (size_t i = 0; i < value.size(); i++)
 		{
+			if (!(value[i] >= '0' && value[i] <= '9'))
+			{
+				if (errorFlag == false)
+					errorFlag = true;
+				else
+					break;
+			}
 			switch (value[i])
 			{
 			case '-':
@@ -90,14 +97,14 @@ void ScalarConverter::convert(const std::string value)
 					errorFlag = true;
 			}
 		}
-		if (hifenFlag)
-			finalValue *= -1;
-		charValue = static_cast<char>(finalValue);
-		intValue = static_cast<int>(finalValue);
-		floatValue = static_cast<float>(finalValue);
-		doubleValue = static_cast<double>(finalValue);
 		if (errorFlag == false)
 		{
+			if (hifenFlag)
+				finalValue *= -1;
+			charValue = static_cast<char>(finalValue);
+			intValue = static_cast<int>(finalValue);
+			floatValue = static_cast<float>(finalValue);
+			doubleValue = static_cast<double>(finalValue);
 			if (charValue >= 32 && charValue <= 126)
 				std::cout << "char: '" << charValue << "'" << std::endl;
 			else if (charValue < 32 || charValue > 126)
@@ -118,5 +125,7 @@ void ScalarConverter::convert(const std::string value)
 			else
 				std::cout << "double: Overload" << std::endl;
 		}
+		else
+			std::cout << "INVALID INPUT" << std::endl;
 	}
 }
