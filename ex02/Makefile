@@ -1,5 +1,5 @@
-NAME = serialize
-SRC = main.cpp Serializer.cpp
+NAME = identify
+SRC = main.cpp Base.cpp
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
 FLAGSCXX = -Wall -Wextra -Werror -g -std=c++98
@@ -7,7 +7,7 @@ FLAGSCXX = -Wall -Wextra -Werror -g -std=c++98
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CXX) $(FLAGSCXX) $(OBJ) -o $(NAME)
+	$(CXX) $(FLAGSCXX) $^ -o $@
 
 %.o: %.cpp
 	$(CXX) $(FLAGSCXX) -c $< -o $@
@@ -20,4 +20,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all re fclean clean
+.PHONY: all re clean fclean
