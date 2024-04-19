@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 06:45:34 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/02/19 11:49:16 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/04/19 11:27:55 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,33 +16,35 @@ ScalarConverter::ScalarConverter() {}
 
 ScalarConverter::~ScalarConverter() {}
 
-ScalarConverter::ScalarConverter(const ScalarConverter& original) {
+ScalarConverter::ScalarConverter(const ScalarConverter &original)
+{
 	*this = original;
 }
 
-ScalarConverter& ScalarConverter::operator=(const ScalarConverter& obj) {
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &obj)
+{
 	*this = obj;
 	return *this;
 }
 
 void ScalarConverter::convert(const std::string value)
 {
-	bool	intType = true, errorFlag = false, hifenFlag = false, dotFlag = false, fFlag = false;
-	char	charValue = 0;
-	int		intValue = 0;
-	float	floatValue = 0.0f;
-	long double	finalValue = 0.0, doubleValue = 0.0, fractionalMultiplier = 0.1;
+	bool intType = true, errorFlag = false, hifenFlag = false, dotFlag = false, fFlag = false;
+	char charValue = 0;
+	int intValue = 0;
+	float floatValue = 0.0f;
+	long double finalValue = 0.0, doubleValue = 0.0, fractionalMultiplier = 0.1;
 	if (value == "-inff" || value == "-inf")
 	{
 		std::cout << "char: Non displayable" << std::endl;
-		std::cout << "int: Overload"  << std::endl;
+		std::cout << "int: Overload" << std::endl;
 		std::cout << "float: " << -std::numeric_limits<double>::infinity() << "f" << std::endl;
 		std::cout << "double: " << -std::numeric_limits<double>::infinity() << std::endl;
 	}
 	else if (value == "+inff" || value == "+inf")
 	{
 		std::cout << "char: Non displayable" << std::endl;
-		std::cout << "int: Overload"  << std::endl;
+		std::cout << "int: Overload" << std::endl;
 		std::cout << "float: +" << std::numeric_limits<double>::infinity() << "f" << std::endl;
 		std::cout << "double: +" << std::numeric_limits<double>::infinity() << std::endl;
 	}
@@ -114,7 +116,7 @@ void ScalarConverter::convert(const std::string value)
 				std::cout << "int: " << intValue << std::endl;
 			else
 				std::cout << "int: Overload" << std::endl;
-			
+
 			if (floatValue >= -std::numeric_limits<float>::max() && floatValue <= std::numeric_limits<float>::max())
 				std::cout << "float: " << floatValue << ((intType) ? ".0f" : "f") << std::endl;
 			else

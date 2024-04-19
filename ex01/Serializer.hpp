@@ -6,12 +6,12 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 12:09:17 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/02/19 15:47:28 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/04/19 11:51:15 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _SERIAlIZER_
-# define _SERIAlIZER_
+#define _SERIAlIZER_
 
 #include <iostream>
 #include <stdint.h>
@@ -25,14 +25,17 @@ typedef struct Data
 	double doubleValue;
 } Data;
 
-class Serializer {
-public:
+class Serializer
+{
+private:
 	Serializer();
+	Serializer(const Serializer &);
+	Serializer &operator=(const Serializer &);
 	~Serializer();
-	Serializer(const Serializer&);
-	Serializer& operator=(const Serializer&);
-	static uintptr_t serialize(Data* ptr);
-	static Data* deserialize(uintptr_t raw);	
+
+public:
+	static uintptr_t serialize(Data *ptr);
+	static Data *deserialize(uintptr_t raw);
 };
 
 #endif

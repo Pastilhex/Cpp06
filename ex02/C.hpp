@@ -6,10 +6,12 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 16:15:05 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/02/20 14:08:25 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/04/19 11:37:11 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
 
-class C : public Base {};
+class C : public Base
+{
+};
